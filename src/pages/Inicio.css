@@ -3,25 +3,27 @@
   padding: 0;
   max-width: 100%;
   margin: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .ecp-page__title {
+  width: 100%;
   color: var(--ecp-text);
   font-size: 2.5rem;
   font-weight: 900;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 0 0;
   text-align: center;
 }
 
 /* Hero Section */
 .ecp-hero {
   position: relative;
-  width: 100vw;
+  width: 100%;
   margin-left: calc(-50vw + 50%);
-  margin-bottom: 0;
   height: 100%;
   min-height: 700px;
   display: flex;
