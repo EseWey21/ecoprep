@@ -36,7 +36,7 @@ img { max-width: 100%; display: block; }
 	padding: 1.25rem 1.5rem; /* más alto */
 	min-height: 88px;
 	background: var(--ecp-primary); /* fallback */
-	background: linear-gradient(180deg, var(--ecp-primary) 0%, var(--ecp-primary-dark) 100%);
+	background: linear-gradient(180deg, var(--ecp-primary-dark) 0%, var(--ecp-primary) 100%);
 	color: #fff;
 	box-sizing: border-box;
 	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
