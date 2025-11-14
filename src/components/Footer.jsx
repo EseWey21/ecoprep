@@ -1,5 +1,6 @@
 import { MdEmail, MdLocationOn } from 'react-icons/md'
 import { FaWhatsapp, FaInstagram, FaFacebook } from 'react-icons/fa'
+import './Footer.css'
 
 function Footer() {
   const whatsappMessage = encodeURIComponent('Hola me interesa información sobre el curso')
