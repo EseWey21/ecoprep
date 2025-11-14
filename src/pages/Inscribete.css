@@ -1,0 +1,14 @@
+/* Estilos para la página de Inscríbete */
+.ecp-page {
+  padding: 2rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ecp-page__title {
+  color: var(--ecp-text);
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}

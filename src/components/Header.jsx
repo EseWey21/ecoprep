@@ -1,8 +1,11 @@
+import { Link, useLocation } from 'react-router-dom'
 
 function Header() {
+  const location = useLocation()
+
   return (
     <header className="ecp-header">
-      <a href="/" className="ecp-brand" aria-label="ECOPREP inicio">
+      <Link to="/" className="ecp-brand" aria-label="ECOPREP inicio">
         <img
           className="ecp-brand__logo"
           src="https://ecoprep.com.mx/img/logo.jpeg"
@@ -12,12 +15,27 @@ function Header() {
           <div className="ecp-brand__title">ECOPREP</div>
           <div className="ecp-brand__subtitle">CURSO INTENSIVO PARA EL EXAMEN ECOEMS</div>
         </div>
-      </a>
+      </Link>
 
       <nav className="ecp-header__nav" aria-label="Navegación principal">
-        <a href="/" className="ecp-link is-active">Inicio</a>
-        <a href="/inscribete" className="ecp-link ecp-link--cta">Inscríbete</a>
-        <a href="/pruebate" className="ecp-link">¡Pruébate!</a>
+        <Link 
+          to="/" 
+          className={`ecp-link ${location.pathname === '/' ? 'is-active' : ''}`}
+        >
+          Inicio
+        </Link>
+        <Link 
+          to="/inscribete" 
+          className="ecp-link ecp-link--cta"
+        >
+          Inscríbete
+        </Link>
+        <Link 
+          to="/pruebate" 
+          className={`ecp-link ${location.pathname === '/pruebate' ? 'is-active' : ''}`}
+        >
+          ¡Pruébate!
+        </Link>
       </nav>
     </header>
   )

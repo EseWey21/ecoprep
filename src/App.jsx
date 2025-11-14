@@ -1,13 +1,23 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
+import Inicio from './pages/Inicio.jsx'
+import Inscribete from './pages/Inscribete.jsx'
+import Pruebate from './pages/Pruebate.jsx'
 
-// Componente raíz: solo el header, la ruta principal queda en blanco
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
+      <main style={{ flex: 1 }}>
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/inscribete" element={<Inscribete />} />
+          <Route path="/pruebate" element={<Pruebate />} />
+        </Routes>
+      </main>
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 
