@@ -1,6 +1,7 @@
 import './Inicio.css'
 import alumnoImg from '../assets/alumno.jpeg'
 import ipnImg from '../assets/ipn.png'
+import teamImg from '../assets/team.jpeg'
 import { useState, useEffect } from 'react'
 import { FaUserGraduate, FaChalkboardTeacher, FaBookOpen, FaUsers } from 'react-icons/fa'
 
@@ -99,6 +100,21 @@ function Inicio() {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="ecp-profesores">
+        <div className="ecp-profesores__container">
+          <div className="ecp-profesores__left">
+            <img src={teamImg} alt="Equipo de profesores ECOPREP" className="ecp-profesores__image" />
+          </div>
+          
+          <div className="ecp-profesores__right">
+            <h2 className="ecp-profesores__title">Profesorado</h2>
+            <p className="ecp-profesores__text">
+              Nuestro equipo docente en ECOPREP está conformado por Ingenieros y Licenciados, orgullosamente egresados del Instituto Politécnico Nacional (IPN). Cada uno cuenta con más de 4 años de experiencia ininterrumpida en la preparación de cursos, aportando no solo conocimientos sólidos, sino también estrategias didácticas probadas. Su compromiso, creatividad y vocación aseguran una preparación integral y efectiva para tu examen COMIPEMS, acompañándote paso a paso en tu camino al éxito académico.
+            </p>
           </div>
         </div>
       </section>

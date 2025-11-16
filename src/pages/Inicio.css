@@ -346,3 +346,79 @@
   }
 }
 
+/* Sección Profesores */
+.ecp-profesores {
+  width: 100%;
+  background: var(--ecp-bg);
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+}
+
+.ecp-profesores__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.ecp-profesores__left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ecp-profesores__image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(59, 105, 156, 0.2);
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.ecp-profesores__image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(59, 105, 156, 0.3);
+}
+
+.ecp-profesores__right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ecp-profesores__title {
+  color: var(--ecp-primary-dark);
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.ecp-profesores__text {
+  color: var(--ecp-text);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Responsive para profesores */
+@media (max-width: 968px) {
+  .ecp-profesores__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .ecp-profesores__title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .ecp-profesores__text {
+    text-align: center;
+  }
+}
+
