@@ -86,7 +86,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .ecp-hero {
-    min-height: 550px;
+    min-height: 300px; /* un poco más pequeño */
   }
 
   .ecp-hero__title {
@@ -97,3 +97,133 @@
     font-size: 1.1rem;
   }
 }
+
+/* Sección ¿Qué ofrecemos? */
+.ecp-ofertas {
+  width: 100%;
+  background: var(--ecp-bg);
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  height: auto;
+}
+
+.ecp-ofertas__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  height: fit-content;
+}
+
+.ecp-ofertas__left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0;
+  position: static;
+  height: auto;
+}
+
+.ecp-ofertas__title {
+  color: var(--ecp-primary-dark);
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.ecp-ofertas__description {
+  color: var(--ecp-text);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.ecp-ofertas__right {
+  position: static;
+  height: 294px;
+  min-height: 294px;
+  max-height: 294px;
+}
+
+/* Estilos para las tarjetas del ScrollStack */
+.ecp-stack-card__title {
+  color: var(--ecp-primary-dark);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+
+.ecp-stack-card__text {
+  color: var(--ecp-text);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.ecp-ofertas__right .scroll-stack-scroller {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 20px;
+}
+
+.ecp-ofertas__right .scroll-stack-inner {
+  padding: 0 1rem 2rem 1rem;
+  min-height: 100%;
+}
+
+.ecp-ofertas__right .scroll-stack-card {
+  background: #fff;
+  border: 2px solid var(--ecp-secondary);
+  box-shadow: 0 4px 20px rgba(59, 105, 156, 0.15);
+  transition: box-shadow 0.3s ease;
+  height: auto;
+  min-height: 300px;
+  width: 100%;
+}
+
+.ecp-ofertas__right .scroll-stack-card:hover {
+  box-shadow: 0 8px 30px rgba(59, 105, 156, 0.25);
+}
+
+/* Responsive para ofertas */
+@media (max-width: 968px) {
+  .ecp-ofertas__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .ecp-ofertas__left {
+    position: relative;
+    top: 0;
+    text-align: center;
+  }
+
+  .ecp-ofertas__title {
+    font-size: 2.2rem;
+  }
+
+  .ecp-ofertas__description {
+    font-size: 1.1rem;
+  }
+
+  .ecp-ofertas__right {
+    min-height: 100vh;
+  }
+
+  .ecp-stack-card__title {
+    font-size: 1.5rem;
+  }
+
+  .ecp-stack-card__text {
+    font-size: 1rem;
+  }
+}
+
