@@ -155,11 +155,12 @@ function Inicio() {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.5885234567!2d-98.98219680000001!3d19.3586195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1e29007ef259b%3A0x83430dd026943516!2sSan%20Francisco%2049%2C%20Los%20Reyes%2C%2056400%20Los%20Reyes%20Acaquilpan%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1731734400000!5m2!1ses!2smx"
                 width="100%"
                 height="100%"
-                style={{ border: 0 }}
+                style={{ border: 0, pointerEvents: 'auto' }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Mapa - ECOPREP"
+                scrolling="no"
               />
             </div>
           </div>
