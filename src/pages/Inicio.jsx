@@ -1,8 +1,42 @@
 import './Inicio.css'
 import alumnoImg from '../assets/alumno.jpeg'
-import ScrollStack, { ScrollStackItem } from '../components/ScrollStack'
+import { useState, useEffect } from 'react'
+import { FaUserGraduate, FaChalkboardTeacher, FaBookOpen, FaUsers } from 'react-icons/fa'
 
 function Inicio() {
+  const [activeCard, setActiveCard] = useState(0)
+
+  const cards = [
+    {
+      icon: <FaUserGraduate />,
+      title: 'Atención personalizada',
+      description: 'Enfoque individualizado para cada estudiante'
+    },
+    {
+      icon: <FaChalkboardTeacher />,
+      title: 'Profesores especializados por materia',
+      description: 'Expertos en cada área del examen ECOEMS'
+    },
+    {
+      icon: <FaBookOpen />,
+      title: 'Material de estudio actualizado',
+      description: 'Guías de trabajo actualizadas según el temario oficial'
+    },
+    {
+      icon: <FaUsers />,
+      title: 'Asesorías personalizadas',
+      description: 'Para estudiantes desde primaria hasta nivel superior'
+    }
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveCard((prev) => (prev + 1) % cards.length)
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <div className="ecp-page">
       <section className="ecp-hero" style={{ backgroundImage: `url(${alumnoImg})`, zIndex: 1 }}>
@@ -27,42 +61,28 @@ function Inicio() {
           </div>
           
           <div className="ecp-ofertas__right">
-            <ScrollStack
-              itemDistance={200}
-              itemStackDistance={30}
-              baseScale={0.9}
-              stackPosition="20%"
-              scaleEndPosition="10%"
-              useWindowScroll={false}
-            >
-              <ScrollStackItem>
-                <h3 className="ecp-stack-card__title">Atención personalizada</h3>
-                <p className="ecp-stack-card__text">
-                  Enfoque individualizado para cada estudiante, adaptándonos a tu ritmo y necesidades específicas.
-                </p>
-              </ScrollStackItem>
-              
-              <ScrollStackItem>
-                <h3 className="ecp-stack-card__title">Profesores especializados por materia</h3>
-                <p className="ecp-stack-card__text">
-                  Expertos en cada área del examen ECOEMS, con amplia experiencia en preparación de estudiantes.
-                </p>
-              </ScrollStackItem>
-              
-              <ScrollStackItem>
-                <h3 className="ecp-stack-card__title">Material de estudio actualizado</h3>
-                <p className="ecp-stack-card__text">
-                  Guías de trabajo y recursos didácticos constantemente actualizados según el temario oficial.
-                </p>
-              </ScrollStackItem>
-              
-              <ScrollStackItem>
-                <h3 className="ecp-stack-card__title">Asesorías personalizadas</h3>
-                <p className="ecp-stack-card__text">
-                  Para estudiantes desde primaria hasta nivel superior, cubriendo todas las etapas educativas.
-                </p>
-              </ScrollStackItem>
-            </ScrollStack>
+            <div className="ecp-cards-container">
+              {cards.map((card, index) => (
+                <div
+                  key={index}
+                  className={`ecp-card ${index === activeCard ? 'active' : ''} ${index === (activeCard - 1 + cards.length) % cards.length ? 'prev' : ''}`}
+                >
+                  <div className="ecp-card__icon">{card.icon}</div>
+                  <h3 className="ecp-card__title">{card.title}</h3>
+                  <p className="ecp-card__description">{card.description}</p>
+                </div>
+              ))}
+            </div>
+            <div className="ecp-cards-indicators">
+              {cards.map((_, index) => (
+                <button
+                  key={index}
+                  className={`ecp-indicator ${index === activeCard ? 'active' : ''}`}
+                  onClick={() => setActiveCard(index)}
+                  aria-label={`Ver tarjeta ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
