@@ -51,6 +51,17 @@ function Inicio() {
         </div>
       </section>
 
+      <section className="ecp-nosotros">
+        <div className="ecp-nosotros__container">
+          <h2 className="ecp-nosotros__title">
+            Somos un conjunto de profesionistas impulsados por la pasión a la enseñanza.
+          </h2>
+          <p className="ecp-nosotros__text">
+            Nuestro compromiso va más allá del aula: buscamos transformar la manera en la que los estudiantes se enfrentan al conocimiento, haciéndolo accesible, dinámico y motivador. En ECOPREP creemos en el poder de la educación para cambiar vidas.
+          </p>
+        </div>
+      </section>
+
       <section className="ecp-ofertas">
         <div className="ecp-ofertas__container">
           <div className="ecp-ofertas__left">

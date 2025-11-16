@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import logoImg from '../assets/logo.png'
 
 function Header() {
   const location = useLocation()
@@ -8,7 +9,7 @@ function Header() {
       <Link to="/" className="ecp-brand" aria-label="ECOPREP inicio">
         <img
           className="ecp-brand__logo"
-          src="https://ecoprep.com.mx/img/logo.jpeg"
+          src={logoImg}
           alt="Logo de ECOPREP"
         />
         <div className="ecp-brand__text">
