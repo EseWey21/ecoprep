@@ -1,5 +1,6 @@
 import './Inicio.css'
 import alumnoImg from '../assets/alumno.jpeg'
+import ipnImg from '../assets/ipn.png'
 import { useState, useEffect } from 'react'
 import { FaUserGraduate, FaChalkboardTeacher, FaBookOpen, FaUsers } from 'react-icons/fa'
 
@@ -59,6 +60,10 @@ function Inicio() {
           <p className="ecp-nosotros__text">
             Nuestro compromiso va más allá del aula: buscamos transformar la manera en la que los estudiantes se enfrentan al conocimiento, haciéndolo accesible, dinámico y motivador. En ECOPREP creemos en el poder de la educación para cambiar vidas.
           </p>
+          <div className="ecp-nosotros__logos">
+            <img src={ipnImg} alt="Logo IPN" className="ecp-nosotros__logo" />
+            <img src="https://www.unam.mx/sites/default/files/images/unam.svg" alt="Logo UNAM" className="ecp-nosotros__logo" />
+          </div>
         </div>
       </section>
 

@@ -131,6 +131,27 @@
   margin: 0;
 }
 
+.ecp-nosotros__logos {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.ecp-nosotros__logo {
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ecp-nosotros__logo:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
 /* Sección ¿Qué ofrecemos? */
 .ecp-ofertas {
   width: 100%;
