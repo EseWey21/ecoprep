@@ -58,9 +58,24 @@ function Inicio() {
           <h2 className="ecp-nosotros__title">
             Somos un conjunto de profesionistas impulsados por la pasión a la enseñanza.
           </h2>
-          <p className="ecp-nosotros__text">
-            Nuestro compromiso va más allá del aula: buscamos transformar la manera en la que los estudiantes se enfrentan al conocimiento, haciéndolo accesible, dinámico y motivador. En ECOPREP creemos en el poder de la educación para cambiar vidas.
-          </p>
+          <div className="ecp-nosotros__content">
+            <div className="ecp-nosotros__column">
+              <p className="ecp-nosotros__text">
+                Nuestro compromiso va más allá del aula: buscamos transformar la manera en la que los estudiantes se enfrentan al conocimiento, haciéndolo accesible, dinámico y motivador. En ECOPREP creemos en el poder de la educación para cambiar vidas.
+              </p>
+              <p className="ecp-nosotros__text">
+                A lo largo de los años, hemos ayudado a cientos de estudiantes a alcanzar sus metas académicas.
+              </p>
+            </div>
+            <div className="ecp-nosotros__column">
+              <p className="ecp-nosotros__text">
+                Nuestro método de enseñanza se enfoca en la comprensión profunda de los conceptos.
+              </p>
+              <p className="ecp-nosotros__text">
+                Nos enorgullecemos de ser una institución que se adapta a las necesidades de cada estudiante. Ofrecemos horarios flexibles, tutorías adicionales y simulacros de examen para que cada alumno se sienta completamente preparado y seguro el día de su prueba.
+              </p>
+            </div>
+          </div>
           <div className="ecp-nosotros__logos">
             <img src={ipnImg} alt="Logo IPN" className="ecp-nosotros__logo" />
             <img src="https://www.unam.mx/sites/default/files/images/unam.svg" alt="Logo UNAM" className="ecp-nosotros__logo" />
