@@ -447,3 +447,65 @@
   }
 }
 
+/* Sección Ubicación */
+.ecp-ubicacion {
+  width: 100%;
+  background: var(--ecp-bg);
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+}
+
+.ecp-ubicacion__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.ecp-ubicacion__title {
+  color: var(--ecp-primary-dark);
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.ecp-ubicacion__maps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+.ecp-ubicacion__map-container {
+  width: 100%;
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(59, 105, 156, 0.2);
+  transition: all 0.3s ease;
+}
+
+.ecp-ubicacion__map-container:hover {
+  box-shadow: 0 12px 40px rgba(59, 105, 156, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Responsive para ubicacion */
+@media (max-width: 968px) {
+  .ecp-ubicacion__maps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .ecp-ubicacion__title {
+    font-size: 2.2rem;
+  }
+
+  .ecp-ubicacion__map-container {
+    height: 350px;
+  }
+}
+

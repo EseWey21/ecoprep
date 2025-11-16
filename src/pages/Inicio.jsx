@@ -133,6 +133,38 @@ function Inicio() {
           </div>
         </div>
       </section>
+
+      <section className="ecp-ubicacion">
+        <div className="ecp-ubicacion__container">
+          <h2 className="ecp-ubicacion__title">Ubicación</h2>
+          <div className="ecp-ubicacion__maps">
+            <div className="ecp-ubicacion__map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1731734400000!6m8!1m7!1s_8e88t1AL352yJUesyWEVA!2m2!1d19.35849589999999!2d-98.98039149999999!3f337.24!4f-9.1!5f0.7525749891599188"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Vista de calle - ECOPREP"
+              />
+            </div>
+            <div className="ecp-ubicacion__map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.5885234567!2d-98.98219680000001!3d19.3586195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1e29007ef259b%3A0x83430dd026943516!2sSan%20Francisco%2049%2C%20Los%20Reyes%2C%2056400%20Los%20Reyes%20Acaquilpan%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1731734400000!5m2!1ses!2smx"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mapa - ECOPREP"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
