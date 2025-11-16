@@ -30,6 +30,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: var(--ecp-primary-dark);
 }
 
 /* Background image with blur */
@@ -101,7 +102,7 @@
 /* Sección Nosotros */
 .ecp-nosotros {
   width: 100%;
-  background: var(--ecp-bg);
+  background: #ffffff;
   padding: 5rem 2rem;
   box-sizing: border-box;
 }
@@ -374,7 +375,7 @@
 /* Sección Profesores */
 .ecp-profesores {
   width: 100%;
-  background: var(--ecp-bg);
+  background: #ffffff;
   padding: 4rem 2rem;
   box-sizing: border-box;
 }
