@@ -1,8 +1,17 @@
 import { Link, useLocation } from 'react-router-dom'
 import logoImg from '../assets/logo.png'
+import StaggeredMenu from './StaggeredMenu'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 
 function Header() {
   const location = useLocation()
+  const isMobile = useMediaQuery('(max-width: 768px)')
+
+  const menuItems = [
+    { label: 'Inicio', link: '/', ariaLabel: 'Ir a la página de Inicio' },
+    { label: 'Inscríbete', link: '/inscribete', ariaLabel: 'Ir a la página de Inscripción' },
+    { label: '¡Pruébate!', link: '/pruebate', ariaLabel: 'Ir a la página de Prueba' },
+  ]
 
   return (
     <header className="ecp-header">
@@ -18,26 +27,38 @@ function Header() {
         </div>
       </Link>
 
-      <nav className="ecp-header__nav" aria-label="Navegación principal">
-        <Link 
-          to="/" 
-          className={`ecp-link ${location.pathname === '/' ? 'is-active' : ''}`}
-        >
-          Inicio
-        </Link>
-        <Link 
-          to="/inscribete" 
-          className="ecp-link ecp-link--cta"
-        >
-          Inscríbete
-        </Link>
-        <Link 
-          to="/pruebate" 
-          className={`ecp-link ${location.pathname === '/pruebate' ? 'is-active' : ''}`}
-        >
-          ¡Pruébate!
-        </Link>
-      </nav>
+      {isMobile ? (
+        <StaggeredMenu
+          items={menuItems}
+          displayItemNumbering={false}
+          logoUrl={logoImg}
+          menuButtonColor="#fff"
+          openMenuButtonColor="#000"
+          accentColor="#FBCB43"
+          colors={['#3B699C', '#1E3A5F']}
+        />
+      ) : (
+        <nav className="ecp-header__nav" aria-label="Navegación principal">
+          <Link 
+            to="/" 
+            className={`ecp-link ${location.pathname === '/' ? 'is-active' : ''}`}
+          >
+            Inicio
+          </Link>
+          <Link 
+            to="/inscribete" 
+            className="ecp-link ecp-link--cta"
+          >
+            Inscríbete
+          </Link>
+          <Link 
+            to="/pruebate" 
+            className={`ecp-link ${location.pathname === '/pruebate' ? 'is-active' : ''}`}
+          >
+            ¡Pruébate!
+          </Link>
+        </nav>
+      )}
     </header>
   )
 }
