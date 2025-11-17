@@ -22,7 +22,7 @@ html, body, #root {
 
 main {
 	width: 100%;	
-	padding: 0;
+	padding: 70px 0 0 0; /* padding-top igual a min-height del header */
 	margin: 0;
   	display: flex;
   	flex-direction: column;
@@ -42,18 +42,22 @@ img { max-width: 100%; display: block; }
 
 /* ===== Header styles ===== */
 .ecp-header {
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	gap: 1rem;
-	padding: 1.25rem 1.5rem; /* más alto */
-	min-height: 88px;
+	padding: 0.9rem 1.5rem;
+	min-height: 70px;
 	background: var(--ecp-primary); /* fallback */
 	background: linear-gradient(180deg, var(--ecp-primary-dark) 0%, var(--ecp-primary) 100%);
 	color: #fff;
 	box-sizing: border-box;
-	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+	box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+	z-index: 1000;
 }
 
 .ecp-brand {
@@ -64,7 +68,7 @@ img { max-width: 100%; display: block; }
 }
 
 .ecp-brand__logo {
-	height: 72px; /* más grande */
+	height: 54px;
 	width: auto;
 	object-fit: contain;
 	border-radius: 4px;
@@ -79,14 +83,14 @@ img { max-width: 100%; display: block; }
 .ecp-brand__title {
 	color: #fff; /* contraste sobre azul */
 	font-weight: 900;
-	font-size: 1.8rem; /* más grande */
+	font-size: 1.5rem;
 	letter-spacing: 0.6px;
 }
 
 .ecp-brand__subtitle {
 	color: #E6EEF7; /* subtítulo más claro para contraste */
 	font-weight: 600;
-	font-size: 0.95rem; /* más grande */
+	font-size: 0.85rem;
 }
 
 .ecp-header__nav {
@@ -99,8 +103,8 @@ img { max-width: 100%; display: block; }
 	color: #fff; /* enlaces blancos en header azul */
 	text-decoration: none;
 	font-weight: 700;
-	font-size: 1rem; /* más grande */
-	padding: 0.6rem 0.9rem; /* más alto */
+	font-size: 0.95rem;
+	padding: 0.5rem 0.8rem;
 	border-radius: 8px;
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
 	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
