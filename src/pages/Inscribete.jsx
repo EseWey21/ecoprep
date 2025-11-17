@@ -1,5 +1,5 @@
 import './Inscribete.css'
-import { FaTag, FaBook, FaFileAlt, FaCreditCard, FaCalendarAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { FaTag, FaBook, FaFileAlt, FaCreditCard, FaCalendarAlt, FaChevronLeft, FaChevronRight, FaUser, FaEnvelope, FaPhone, FaClipboardCheck } from 'react-icons/fa'
 import { useState } from 'react'
 import calendario1 from '../assets/calendario/1.png'
 import calendario2 from '../assets/calendario/2.png'
@@ -11,6 +11,12 @@ import calendario7 from '../assets/calendario/7.png'
 
 function Inscribete() {
   const [currentPage, setCurrentPage] = useState(0)
+  const [formData, setFormData] = useState({
+    nombre: '',
+    correo: '',
+    telefono: '',
+    interes: ''
+  })
   
   const calendarios = [
     calendario1,
@@ -37,6 +43,21 @@ function Inscribete() {
     const start = currentPage * itemsPerPage
     const end = start + itemsPerPage
     return calendarios.slice(start, end)
+  }
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('Formulario enviado:', formData)
+    // Aquí puedes agregar la lógica para enviar el formulario
+    alert('¡Gracias por tu registro! Nos pondremos en contacto contigo pronto.')
   }
 
   return (
@@ -123,6 +144,99 @@ function Inscribete() {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="ecp-registro">
+        <div className="ecp-registro__container">
+          <h2 className="ecp-registro__titulo">Regístrate para asegurar tu lugar</h2>
+          
+          <form className="ecp-formulario" onSubmit={handleSubmit}>
+            <div className="ecp-formulario__grupo">
+              <label className="ecp-formulario__label">
+                <FaUser className="ecp-formulario__icon" />
+                Nombre Completo
+              </label>
+              <input
+                type="text"
+                name="nombre"
+                value={formData.nombre}
+                onChange={handleInputChange}
+                className="ecp-formulario__input"
+                placeholder="Ingresa tu nombre completo"
+                required
+              />
+            </div>
+
+            <div className="ecp-formulario__grupo">
+              <label className="ecp-formulario__label">
+                <FaEnvelope className="ecp-formulario__icon" />
+                Correo Electrónico
+              </label>
+              <input
+                type="email"
+                name="correo"
+                value={formData.correo}
+                onChange={handleInputChange}
+                className="ecp-formulario__input"
+                placeholder="tu@email.com"
+                required
+              />
+            </div>
+
+            <div className="ecp-formulario__grupo">
+              <label className="ecp-formulario__label">
+                <FaPhone className="ecp-formulario__icon" />
+                Número Telefónico
+              </label>
+              <input
+                type="tel"
+                name="telefono"
+                value={formData.telefono}
+                onChange={handleInputChange}
+                className="ecp-formulario__input"
+                placeholder="10 dígitos"
+                required
+              />
+            </div>
+
+            <div className="ecp-formulario__grupo">
+              <label className="ecp-formulario__label">
+                <FaClipboardCheck className="ecp-formulario__icon" />
+                ¿En qué estás interesado?
+              </label>
+              <div className="ecp-formulario__opciones">
+                <label className="ecp-formulario__opcion">
+                  <input
+                    type="radio"
+                    name="interes"
+                    value="curso"
+                    checked={formData.interes === 'curso'}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <span className="ecp-formulario__radio"></span>
+                  Curso preparación examen ECOEMS
+                </label>
+                <label className="ecp-formulario__opcion">
+                  <input
+                    type="radio"
+                    name="interes"
+                    value="asesorias"
+                    checked={formData.interes === 'asesorias'}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <span className="ecp-formulario__radio"></span>
+                  Asesorías personalizadas
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" className="ecp-formulario__btn">
+              Enviar Registro
+            </button>
+          </form>
         </div>
       </section>
     </div>
