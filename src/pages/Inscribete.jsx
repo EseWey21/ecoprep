@@ -53,11 +53,40 @@ function Inscribete() {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Formulario enviado:', formData)
-    // Aquí puedes agregar la lógica para enviar el formulario
-    alert('¡Gracias por tu registro! Nos pondremos en contacto contigo pronto.')
+    
+    try {
+      const response = await fetch('https://ecoback-tau.vercel.app/api/registro', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nombreCompleto: formData.nombre,
+          email: formData.correo,
+          telefono: formData.telefono,
+          interes: formData.interes === 'curso' ? 'curso_ecoeems' : 'asesorias_personalizadas'
+        })
+      })
+
+      if (response.status === 201) {
+        const data = await response.json()
+        alert(`${data.message}\n\nPor favor, revisa tu bandeja de entrada y la carpeta de SPAM para confirmar tu registro.`)
+        // Limpiar el formulario
+        setFormData({
+          nombre: '',
+          correo: '',
+          telefono: '',
+          interes: ''
+        })
+      } else {
+        throw new Error('Error al procesar el registro')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      alert('Hubo un problema al enviar tu registro. Por favor, intenta nuevamente.')
+    }
   }
 
   return (
