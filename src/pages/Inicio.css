@@ -84,18 +84,59 @@
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive - Tablets */
+@media (max-width: 968px) {
   .ecp-hero {
-    min-height: 300px; /* un poco más pequeño */
+    min-height: 500px;
   }
 
   .ecp-hero__title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .ecp-hero__subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsive - Móviles grandes (iPhone 14 Pro Max, 15 Plus, etc) */
+@media (max-width: 480px) {
+  .ecp-hero {
+    min-height: 450px;
+  }
+
+  .ecp-hero__content {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .ecp-hero__title {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .ecp-hero__subtitle {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+
+/* Responsive - Móviles pequeños (iPhone SE, 12 mini, 13 mini) */
+@media (max-width: 390px) {
+  .ecp-hero {
+    min-height: 400px;
+  }
+
+  .ecp-hero__content {
+    padding: 1.25rem 1rem;
+  }
+
+  .ecp-hero__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .ecp-hero__subtitle {
+    font-size: 0.95rem;
   }
 }
 
@@ -166,8 +207,12 @@
   filter: brightness(1.1);
 }
 
-/* Responsive para nosotros */
+/* Responsive para nosotros - Tablets */
 @media (max-width: 968px) {
+  .ecp-nosotros {
+    padding: 3.5rem 1.5rem;
+  }
+
   .ecp-nosotros__content {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -175,6 +220,59 @@
   
   .ecp-nosotros__title {
     font-size: 2.2rem;
+  }
+
+  .ecp-nosotros__logos {
+    gap: 3rem;
+  }
+}
+
+/* Responsive para nosotros - Móviles */
+@media (max-width: 480px) {
+  .ecp-nosotros {
+    padding: 3rem 1.25rem;
+  }
+
+  .ecp-nosotros__title {
+    font-size: 1.75rem;
+    line-height: 1.25;
+  }
+
+  .ecp-nosotros__text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .ecp-nosotros__logos {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .ecp-nosotros__logo {
+    height: 120px;
+  }
+}
+
+/* Responsive para nosotros - Móviles pequeños */
+@media (max-width: 390px) {
+  .ecp-nosotros {
+    padding: 2.5rem 1rem;
+  }
+
+  .ecp-nosotros__title {
+    font-size: 1.5rem;
+  }
+
+  .ecp-nosotros__text {
+    font-size: 0.95rem;
+  }
+
+  .ecp-nosotros__logos {
+    gap: 1.5rem;
+  }
+
+  .ecp-nosotros__logo {
+    height: 100px;
   }
 }
 
@@ -338,11 +436,15 @@
   border-radius: 6px;
 }
 
-/* Responsive para ofertas */
+/* Responsive para ofertas - Tablets */
 @media (max-width: 968px) {
+  .ecp-ofertas {
+    padding: 3.5rem 1.5rem;
+  }
+
   .ecp-ofertas__container {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .ecp-ofertas__left {
@@ -356,19 +458,104 @@
   }
 
   .ecp-ofertas__description {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .ecp-ofertas__right {
-    min-height: 100vh;
+    min-height: auto;
+  }
+}
+
+/* Responsive para ofertas - Móviles */
+@media (max-width: 480px) {
+  .ecp-ofertas {
+    padding: 3rem 1.25rem;
   }
 
-  .ecp-stack-card__title {
+  .ecp-ofertas__container {
+    gap: 2rem;
+  }
+
+  .ecp-ofertas__title {
+    font-size: 1.75rem;
+  }
+
+  .ecp-ofertas__description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .ecp-cards-container {
+    height: 380px;
+  }
+
+  .ecp-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .ecp-card__icon {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+  }
+
+  .ecp-card__title {
+    font-size: 1.4rem;
+  }
+
+  .ecp-card__description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .ecp-cards-indicators {
+    gap: 0.6rem;
+  }
+
+  .ecp-indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .ecp-indicator.active {
+    width: 28px;
+  }
+}
+
+/* Responsive para ofertas - Móviles pequeños */
+@media (max-width: 390px) {
+  .ecp-ofertas {
+    padding: 2.5rem 1rem;
+  }
+
+  .ecp-ofertas__title {
     font-size: 1.5rem;
   }
 
-  .ecp-stack-card__text {
-    font-size: 1rem;
+  .ecp-ofertas__description {
+    font-size: 0.95rem;
+  }
+
+  .ecp-cards-container {
+    height: 350px;
+  }
+
+  .ecp-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .ecp-card__icon {
+    font-size: 2.5rem;
+    width: 70px;
+    height: 70px;
+  }
+
+  .ecp-card__title {
+    font-size: 1.25rem;
+  }
+
+  .ecp-card__description {
+    font-size: 0.95rem;
   }
 }
 
@@ -431,8 +618,12 @@
   margin: 0;
 }
 
-/* Responsive para profesores */
+/* Responsive para profesores - Tablets */
 @media (max-width: 968px) {
+  .ecp-profesores {
+    padding: 3.5rem 1.5rem;
+  }
+
   .ecp-profesores__container {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -445,6 +636,49 @@
 
   .ecp-profesores__text {
     text-align: center;
+  }
+}
+
+/* Responsive para profesores - Móviles */
+@media (max-width: 480px) {
+  .ecp-profesores {
+    padding: 3rem 1.25rem;
+  }
+
+  .ecp-profesores__container {
+    gap: 1.75rem;
+  }
+
+  .ecp-profesores__title {
+    font-size: 1.75rem;
+  }
+
+  .ecp-profesores__text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .ecp-profesores__image {
+    border-radius: 15px;
+  }
+}
+
+/* Responsive para profesores - Móviles pequeños */
+@media (max-width: 390px) {
+  .ecp-profesores {
+    padding: 2.5rem 1rem;
+  }
+
+  .ecp-profesores__title {
+    font-size: 1.5rem;
+  }
+
+  .ecp-profesores__text {
+    font-size: 0.95rem;
+  }
+
+  .ecp-profesores__image {
+    border-radius: 12px;
   }
 }
 
@@ -489,8 +723,12 @@
   pointer-events: auto;
 }
 
-/* Responsive para ubicacion */
+/* Responsive para ubicacion - Tablets */
 @media (max-width: 968px) {
+  .ecp-ubicacion {
+    padding: 3.5rem 1.5rem;
+  }
+
   .ecp-ubicacion__maps {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -502,6 +740,46 @@
 
   .ecp-ubicacion__map-container {
     height: 350px;
+  }
+}
+
+/* Responsive para ubicacion - Móviles */
+@media (max-width: 480px) {
+  .ecp-ubicacion {
+    padding: 3rem 1.25rem;
+  }
+
+  .ecp-ubicacion__container {
+    gap: 2rem;
+  }
+
+  .ecp-ubicacion__title {
+    font-size: 1.75rem;
+  }
+
+  .ecp-ubicacion__map-container {
+    height: 300px;
+    border-radius: 15px;
+  }
+}
+
+/* Responsive para ubicacion - Móviles pequeños */
+@media (max-width: 390px) {
+  .ecp-ubicacion {
+    padding: 2.5rem 1rem;
+  }
+
+  .ecp-ubicacion__container {
+    gap: 1.75rem;
+  }
+
+  .ecp-ubicacion__title {
+    font-size: 1.5rem;
+  }
+
+  .ecp-ubicacion__map-container {
+    height: 280px;
+    border-radius: 12px;
   }
 }
 
