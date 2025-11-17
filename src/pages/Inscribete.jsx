@@ -62,10 +62,11 @@ function Inscribete() {
 
   return (
     <div className="ecp-page">
-      <h1 className="ecp-page__title">¡Inicia tu preparación hoy!</h1>
-      
-      <div className="ecp-inscribete__container">
-        <div className="ecp-inscribete__columna-izquierda">
+      <section className="ecp-inscribete-section">
+        <h1 className="ecp-page__title">¡Inicia tu preparación hoy!</h1>
+        
+        <div className="ecp-inscribete__container">
+          <div className="ecp-inscribete__columna-izquierda">
           <div className="ecp-precio">
             <div className="ecp-precio__tag">
               <FaTag className="ecp-precio__tag-icon" />
@@ -98,7 +99,8 @@ function Inscribete() {
             </p>
           </div>
         </div>
-      </div>
+        </div>
+      </section>
 
       <section className="ecp-actividades">
         <div className="ecp-actividades__container">

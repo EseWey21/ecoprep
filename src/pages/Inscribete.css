@@ -1,7 +1,15 @@
 /* Estilos para la página de Inscríbete */
 .ecp-page {
-  padding: 3rem 2rem 0 2rem;
+  padding: 0;
   margin: 0 auto;
+}
+
+/* Sección precio/pago */
+.ecp-inscribete-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
 }
 
 .ecp-page__title {
@@ -19,7 +27,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  padding: 2rem 0;
 }
 
 /* Columna izquierda - Precio */
@@ -184,7 +191,6 @@
   background: var(--ecp-bg);
   padding: 4rem 2rem;
   box-sizing: border-box;
-  margin-top: 3rem;
 }
 
 .ecp-actividades__container {
@@ -323,7 +329,7 @@
 /* Sección Registro */
 .ecp-registro {
   width: 100%;
-  background: var(--ecp-bg);
+  background: #ffffff;
   padding: 3rem 2rem;
   box-sizing: border-box;
 }
