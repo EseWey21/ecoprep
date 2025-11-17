@@ -2,6 +2,7 @@ import './Inscribete.css'
 import { FaTag, FaBook, FaFileAlt, FaCreditCard, FaCalendarAlt, FaChevronLeft, FaChevronRight, FaUser, FaEnvelope, FaPhone, FaClipboardCheck } from 'react-icons/fa'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 import calendario1 from '../assets/calendario/1.png'
 import calendario2 from '../assets/calendario/2.png'
 import calendario3 from '../assets/calendario/3.png'
@@ -19,6 +20,9 @@ function Inscribete() {
     interes: ''
   })
   
+  // Detectar si es móvil
+  const isMobile = useMediaQuery('(max-width: 768px)')
+  
   const calendarios = [
     calendario1,
     calendario2,
@@ -29,7 +33,8 @@ function Inscribete() {
     calendario7
   ]
   
-  const itemsPerPage = 3
+  // Mostrar 1 imagen en móviles, 3 en desktop
+  const itemsPerPage = isMobile ? 1 : 3
   const totalPages = Math.ceil(calendarios.length / itemsPerPage)
   
   const nextPage = () => {
