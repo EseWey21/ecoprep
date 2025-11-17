@@ -7,6 +7,8 @@ import { FaUserGraduate, FaChalkboardTeacher, FaBookOpen, FaUsers } from 'react-
 
 function Inicio() {
   const [activeCard, setActiveCard] = useState(0)
+  const [touchStart, setTouchStart] = useState(null)
+  const [touchEnd, setTouchEnd] = useState(null)
 
   const cards = [
     {
@@ -30,6 +32,42 @@ function Inicio() {
       description: 'Para estudiantes desde primaria hasta nivel superior'
     }
   ]
+
+  // Mínima distancia para considerar un swipe
+  const minSwipeDistance = 50
+
+  const nextCard = () => {
+    setActiveCard((prev) => (prev + 1) % cards.length)
+  }
+
+  const prevCard = () => {
+    setActiveCard((prev) => (prev - 1 + cards.length) % cards.length)
+  }
+
+  // Handlers para gestos táctiles
+  const onTouchStart = (e) => {
+    setTouchEnd(null)
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+    
+    if (isLeftSwipe) {
+      nextCard()
+    }
+    if (isRightSwipe) {
+      prevCard()
+    }
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -93,7 +131,12 @@ function Inicio() {
           </div>
           
           <div className="ecp-ofertas__right">
-            <div className="ecp-cards-container">
+            <div 
+              className="ecp-cards-container"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
               {cards.map((card, index) => (
                 <div
                   key={index}
