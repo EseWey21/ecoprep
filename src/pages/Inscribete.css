@@ -177,3 +177,145 @@
     font-size: 3rem;
   }
 }
+
+/* Sección Actividades */
+.ecp-actividades {
+  width: 100%;
+  background: var(--ecp-bg);
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  margin-top: 3rem;
+}
+
+.ecp-actividades__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.ecp-actividades__titulo {
+  color: var(--ecp-primary-dark);
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Carrusel */
+.ecp-carrusel {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  width: 100%;
+}
+
+.ecp-carrusel__btn {
+  background: var(--ecp-primary);
+  color: #fff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 105, 156, 0.3);
+  flex-shrink: 0;
+}
+
+.ecp-carrusel__btn:hover {
+  background: var(--ecp-primary-dark);
+  transform: scale(1.1);
+}
+
+.ecp-carrusel__btn:active {
+  transform: scale(0.95);
+}
+
+.ecp-carrusel__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  min-height: 400px;
+}
+
+.ecp-carrusel__item {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(59, 105, 156, 0.15);
+  transition: all 0.3s ease;
+}
+
+.ecp-carrusel__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(59, 105, 156, 0.25);
+}
+
+.ecp-carrusel__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Indicadores del carrusel */
+.ecp-carrusel__indicators {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.ecp-carrusel__indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ecp-secondary);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.ecp-carrusel__indicator:hover {
+  background: var(--ecp-primary);
+  transform: scale(1.2);
+}
+
+.ecp-carrusel__indicator.active {
+  background: var(--ecp-primary);
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* Responsive para actividades */
+@media (max-width: 968px) {
+  .ecp-actividades__titulo {
+    font-size: 2rem;
+  }
+
+  .ecp-carrusel {
+    gap: 1rem;
+  }
+
+  .ecp-carrusel__content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .ecp-carrusel__btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
