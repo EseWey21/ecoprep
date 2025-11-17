@@ -1,6 +1,7 @@
 import './Inscribete.css'
 import { FaTag, FaBook, FaFileAlt, FaCreditCard, FaCalendarAlt, FaChevronLeft, FaChevronRight, FaUser, FaEnvelope, FaPhone, FaClipboardCheck } from 'react-icons/fa'
 import { useState } from 'react'
+import Swal from 'sweetalert2'
 import calendario1 from '../assets/calendario/1.png'
 import calendario2 from '../assets/calendario/2.png'
 import calendario3 from '../assets/calendario/3.png'
@@ -56,6 +57,48 @@ function Inscribete() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     
+    // Validación del correo electrónico
+    if (!formData.correo.includes('@') || !formData.correo.includes('.com')) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Correo inválido',
+        text: 'El correo debe contener @ y .com',
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        customClass: {
+          popup: 'ecp-swal-popup',
+          title: 'ecp-swal-title',
+          htmlContainer: 'ecp-swal-text',
+          timerProgressBar: 'ecp-swal-progress'
+        }
+      })
+      return
+    }
+
+    // Validación del teléfono (exactamente 10 dígitos)
+    if (!/^\d{10}$/.test(formData.telefono)) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Teléfono inválido',
+        text: 'El teléfono debe tener exactamente 10 dígitos',
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        customClass: {
+          popup: 'ecp-swal-popup',
+          title: 'ecp-swal-title',
+          htmlContainer: 'ecp-swal-text',
+          timerProgressBar: 'ecp-swal-progress'
+        }
+      })
+      return
+    }
+    
     try {
       const response = await fetch('https://ecoback-tau.vercel.app/api/registro', {
         method: 'POST',
@@ -72,7 +115,22 @@ function Inscribete() {
 
       if (response.status === 201) {
         const data = await response.json()
-        alert(`${data.message}\n\nPor favor, revisa tu bandeja de entrada y la carpeta de SPAM para confirmar tu registro.`)
+        Swal.fire({
+          icon: 'success',
+          title: 'Registro exitoso',
+          html: `${data.message}<br><br>Por favor, revisa tu bandeja de entrada y la carpeta de <strong>SPAM</strong> para confirmar tu registro.`,
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3500,
+          timerProgressBar: true,
+          customClass: {
+            popup: 'ecp-swal-popup',
+            title: 'ecp-swal-title',
+            htmlContainer: 'ecp-swal-text',
+            timerProgressBar: 'ecp-swal-progress'
+          }
+        })
         // Limpiar el formulario
         setFormData({
           nombre: '',
@@ -85,7 +143,22 @@ function Inscribete() {
       }
     } catch (error) {
       console.error('Error:', error)
-      alert('Hubo un problema al enviar tu registro. Por favor, intenta nuevamente.')
+      Swal.fire({
+        icon: 'error',
+        title: 'Error al enviar',
+        text: 'Hubo un problema al enviar tu registro. Por favor, intenta nuevamente.',
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        customClass: {
+          popup: 'ecp-swal-popup',
+          title: 'ecp-swal-title',
+          htmlContainer: 'ecp-swal-text',
+          timerProgressBar: 'ecp-swal-progress'
+        }
+      })
     }
   }
 
@@ -227,6 +300,8 @@ function Inscribete() {
                 onChange={handleInputChange}
                 className="ecp-formulario__input"
                 placeholder="10 dígitos"
+                pattern="\d{10}"
+                maxLength="10"
                 required
               />
             </div>

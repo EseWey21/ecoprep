@@ -514,3 +514,91 @@
     padding: 0.9rem 1.75rem;
   }
 }
+
+/* SweetAlert2 Estilos Personalizados */
+.ecp-swal-popup {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  border-left: 5px solid var(--ecp-primary) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 30px rgba(59, 105, 156, 0.2) !important;
+  padding: 1.25rem 1.5rem !important;
+  min-width: 320px !important;
+  max-width: 400px !important;
+}
+
+.ecp-swal-title {
+  color: var(--ecp-primary-dark) !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 0.5rem 0 !important;
+  padding: 0 !important;
+}
+
+.ecp-swal-text {
+  color: var(--ecp-text) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ecp-swal-progress {
+  background: var(--ecp-primary) !important;
+  height: 4px !important;
+  border-radius: 0 0 12px 12px !important;
+}
+
+/* Iconos de SweetAlert2 personalizados */
+.swal2-success {
+  border-color: #4caf50 !important;
+}
+
+.swal2-success .swal2-success-ring {
+  border-color: rgba(76, 175, 80, 0.3) !important;
+}
+
+.swal2-success .swal2-success-line-tip,
+.swal2-success .swal2-success-line-long {
+  background-color: #4caf50 !important;
+}
+
+.swal2-error {
+  border-color: #f44336 !important;
+}
+
+.swal2-error .swal2-x-mark-line-left,
+.swal2-error .swal2-x-mark-line-right {
+  background-color: #f44336 !important;
+}
+
+/* Animación de entrada para el toast */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.swal2-show {
+  animation: slideInRight 0.3s ease-out !important;
+}
+
+/* Animación de salida para el toast */
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.swal2-hide {
+  animation: slideOutRight 0.3s ease-in !important;
+}
