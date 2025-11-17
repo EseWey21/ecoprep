@@ -4,6 +4,7 @@ import Footer from './components/Footer.jsx'
 import Inicio from './pages/Inicio.jsx'
 import Inscribete from './pages/Inscribete.jsx'
 import Pruebate from './pages/Pruebate.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Inicio />} />
           <Route path="/inscribete" element={<Inscribete />} />
           <Route path="/pruebate" element={<Pruebate />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
