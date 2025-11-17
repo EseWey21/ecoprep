@@ -31,98 +31,16 @@
 .pruebate-icon-wrapper {
   position: relative;
   display: inline-block;
-  margin-bottom: 2.5rem;
-  padding: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Icono principal de construcción */
-.pruebate-construction-icon {
-  display: inline-block;
-  animation: pruebate-bounce 2s infinite;
-}
-
-.pruebate-main-icon {
-  font-size: 6rem;
-  color: #FBCB43;
-  filter: drop-shadow(0 4px 12px rgba(251, 203, 67, 0.3));
-}
-
-@keyframes pruebate-bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-/* Iconos de herramientas flotantes */
-.pruebate-tools-icon {
-  position: absolute;
-  font-size: 2.5rem;
-  color: #F0B933;
-}
-
-.pruebate-tools-icon--1 {
-  top: 0;
-  left: -20px;
-  animation: pruebate-hammer-swing 2s infinite ease-in-out;
-}
-
-.pruebate-tools-icon--2 {
-  top: 30px;
-  right: -10px;
-  animation: pruebate-rotate-slight 3s infinite ease-in-out;
-}
-
-.pruebate-tools-icon--3 {
-  bottom: 10px;
-  left: 10px;
-  animation: pruebate-spin 4s infinite linear;
-}
-
-.pruebate-tools-icon--4 {
-  bottom: 5px;
-  right: 15px;
-  animation: pruebate-pulse 2.5s infinite ease-in-out;
-}
-
-@keyframes pruebate-hammer-swing {
-  0%, 100% {
-    transform: rotate(-15deg);
-  }
-  50% {
-    transform: rotate(15deg);
-  }
-}
-
-@keyframes pruebate-rotate-slight {
-  0%, 100% {
-    transform: rotate(0deg) translateY(0);
-  }
-  50% {
-    transform: rotate(180deg) translateY(-10px);
-  }
-}
-
-@keyframes pruebate-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes pruebate-pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.15);
-    opacity: 1;
-  }
+/* Imagen principal de construcción */
+.pruebate-main-image {
+  width: 250px;
+  height: 250px;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
 }
 
 /* Título */

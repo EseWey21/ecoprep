@@ -1,21 +1,16 @@
 import './Pruebate.css'
-import { IoConstruct } from 'react-icons/io5'
-import { FaHammer, FaScrewdriver } from 'react-icons/fa'
-import { GiGearHammer } from 'react-icons/gi'
-import { BiCog } from 'react-icons/bi'
+import construImg from '../assets/constru.png'
 
 function Pruebate() {
   return (
     <div className="pruebate-container">
       <div className="pruebate-content">
         <div className="pruebate-icon-wrapper">
-          <div className="pruebate-construction-icon">
-            <IoConstruct className="pruebate-main-icon" />
-          </div>
-          <FaHammer className="pruebate-tools-icon pruebate-tools-icon--1" />
-          <FaScrewdriver className="pruebate-tools-icon pruebate-tools-icon--2" />
-          <BiCog className="pruebate-tools-icon pruebate-tools-icon--3" />
-          <GiGearHammer className="pruebate-tools-icon pruebate-tools-icon--4" />
+          <img 
+            src={construImg} 
+            alt="En construcción" 
+            className="pruebate-main-image"
+          />
         </div>
         
         <h1 className="pruebate-title">¡Próximamente Disponible!</h1>
