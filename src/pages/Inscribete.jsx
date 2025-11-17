@@ -19,9 +19,14 @@ function Inscribete() {
     telefono: '',
     interes: ''
   })
+  const [touchStart, setTouchStart] = useState(null)
+  const [touchEnd, setTouchEnd] = useState(null)
   
   // Detectar si es móvil
   const isMobile = useMediaQuery('(max-width: 768px)')
+  
+  // Distancia mínima para detectar swipe (en px)
+  const minSwipeDistance = 50
   
   const calendarios = [
     calendario1,
@@ -49,6 +54,32 @@ function Inscribete() {
     const start = currentPage * itemsPerPage
     const end = start + itemsPerPage
     return calendarios.slice(start, end)
+  }
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null)
+    setTouchStart(e.targetTouches[0].clientX)
+    console.log('Touch started at:', e.targetTouches[0].clientX)
+  }
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+    
+    console.log('Swipe distance:', distance, 'Left:', isLeftSwipe, 'Right:', isRightSwipe)
+    
+    if (isLeftSwipe) {
+      nextPage()
+    } else if (isRightSwipe) {
+      prevPage()
+    }
   }
 
   const handleInputChange = (e) => {
@@ -222,7 +253,12 @@ function Inscribete() {
               <FaChevronLeft />
             </button>
             
-            <div className="ecp-carrusel__content">
+            <div 
+              className="ecp-carrusel__content"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
               {getCurrentItems().map((calendario, index) => (
                 <div key={currentPage * itemsPerPage + index} className="ecp-carrusel__item">
                   <img 

@@ -380,6 +380,16 @@
   gap: 2rem;
   width: 100%;
   min-height: 400px;
+  touch-action: pan-y pinch-zoom;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: grab;
+}
+
+.ecp-carrusel__content:active {
+  cursor: grabbing;
 }
 
 .ecp-carrusel__item {
@@ -400,6 +410,9 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* Indicadores del carrusel */

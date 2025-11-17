@@ -1,12 +1,212 @@
-/* Estilos para la página de Pruébate */
-.ecp-page {
-  margin: 0 auto;
+/* Estilos exclusivos para la página de Pruébate - En construcción */
+
+.pruebate-container {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(251, 203, 67, 0.05) 0%, rgba(240, 185, 51, 0.05) 100%);
 }
 
-.ecp-page__title {
-  color: var(--ecp-text);
+.pruebate-content {
+  max-width: 700px;
+  text-align: center;
+  animation: pruebate-fade-in 0.8s ease-out;
+}
+
+/* Animaciones de entrada */
+@keyframes pruebate-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contenedor de iconos */
+.pruebate-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+}
+
+/* Icono principal de construcción */
+.pruebate-construction-icon {
+  display: inline-block;
+  animation: pruebate-bounce 2s infinite;
+}
+
+.pruebate-main-icon {
+  font-size: 6rem;
+  color: #FBCB43;
+  filter: drop-shadow(0 4px 12px rgba(251, 203, 67, 0.3));
+}
+
+@keyframes pruebate-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Iconos de herramientas flotantes */
+.pruebate-tools-icon {
+  position: absolute;
+  font-size: 2.5rem;
+  color: #F0B933;
+}
+
+.pruebate-tools-icon--1 {
+  top: 0;
+  left: -20px;
+  animation: pruebate-hammer-swing 2s infinite ease-in-out;
+}
+
+.pruebate-tools-icon--2 {
+  top: 30px;
+  right: -10px;
+  animation: pruebate-rotate-slight 3s infinite ease-in-out;
+}
+
+.pruebate-tools-icon--3 {
+  bottom: 10px;
+  left: 10px;
+  animation: pruebate-spin 4s infinite linear;
+}
+
+.pruebate-tools-icon--4 {
+  bottom: 5px;
+  right: 15px;
+  animation: pruebate-pulse 2.5s infinite ease-in-out;
+}
+
+@keyframes pruebate-hammer-swing {
+  0%, 100% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes pruebate-rotate-slight {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(180deg) translateY(-10px);
+  }
+}
+
+@keyframes pruebate-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pruebate-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* Título */
+.pruebate-title {
+  color: var(--ecp-text, #2c3e50);
   font-size: 2.5rem;
   font-weight: 900;
-  margin: 0 0 1.5rem 0;
-  text-align: center;
+  margin: 0 0 2rem 0;
+  background: linear-gradient(135deg, #FBCB43 0%, #F0B933 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: pruebate-slide-in 0.8s ease-out 0.2s backwards;
+}
+
+@keyframes pruebate-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Mensaje */
+.pruebate-message {
+  margin-bottom: 2rem;
+  animation: pruebate-fade-in 0.8s ease-out 0.4s backwards;
+}
+
+.pruebate-text {
+  color: var(--ecp-text, #555);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0 0 1.2rem 0;
+}
+
+.pruebate-text strong {
+  color: #FBCB43;
+  font-weight: 700;
+}
+
+/* Texto del footer */
+.pruebate-footer-text {
+  color: var(--ecp-text, #666);
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0;
+  animation: pruebate-fade-in 0.8s ease-out 0.6s backwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pruebate-container {
+    padding: 1.5rem;
+  }
+
+  .pruebate-title {
+    font-size: 2rem;
+  }
+
+  .pruebate-text {
+    font-size: 1rem;
+  }
+
+  .pruebate-main-icon {
+    font-size: 4.5rem;
+  }
+
+  .pruebate-tools-icon {
+    font-size: 2rem;
+  }
+
+  .pruebate-icon-wrapper {
+    padding: 1.5rem;
+  }
+
+  .pruebate-tools-icon--1 {
+    left: -10px;
+  }
+
+  .pruebate-tools-icon--2 {
+    right: -5px;
+  }
 }
